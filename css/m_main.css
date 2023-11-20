@@ -1,0 +1,58 @@
+/* 23.11.20 변리사 모바일 메인 스타일 */
+main section .sc_tit{font-size: 6vw;line-height: 2.7rem;font-family: 'pretendard';font-weight: 900;padding: 0 5vw 5vw;}
+main section .sc_tit .tit_point{color: #0082ff;}
+
+main section .swiper-pagination{position:absolute;bottom: 5%;left: 84%; cursor:pointer;width:11vw; height:5vw; border-radius:3vw; background:rgba(0,0,0,0.5); color: #fff;line-height: 5.2vw;font-size: 3vw;font-weight: 300;}
+main .sub_bnr_area{margin-top: 9vw;padding: 0 5vw;}
+main .sub_bnr_area img, main .prof_bnr_area img{width: 100%;object-fit: cover;}
+main .sub_bnr_area .sub_bnr2{margin-top: 3vw;}
+main .sub_bnr_area .swiper-pagination, main .prof_bnr_area .swiper-pagination{position:absolute;bottom: 8%;left: 84%; cursor:pointer;width:11vw; height:5vw; border-radius:3vw; background:rgba(0,0,0,0.5); color: #fff;line-height: 5.2vw;font-size: 3vw;font-weight: 300;}
+main .prof_bnr_area{margin: 3vw 0 12vw;padding: 0 5vw;}
+
+/* 신규, 추천 강좌 */
+main .sc_lec{background: #e3f1ff;padding-top: 10vw;}
+main .sc_lec .lec_slide{padding-bottom:2.4rem;margin-left: 5vw;}
+main .sc_lec .lec_slide .swiper-slide{box-sizing:border-box;width: 52%;}
+main .sc_lec .swiper-slide a{display:block;background: #fff;width: 30vw;padding: 4vw 6vw 0;border-radius: 16px;width: 33vw;height: 62vw;overflow: hidden;}
+main .sc_lec .swiper-slide .badge_wrap {margin-bottom: 3vw;}
+main .sc_lec .swiper-slide .badge_wrap .badge{display: inline-block;font-size: 3.2vw;padding: 1vw 2vw;background: #09b4fb;color: #fff;border-radius: 4px;line-height: 3.2vw;}
+main .sc_lec .swiper-slide .badge_wrap .badge.recommend{background: #3c00ff;}
+main .sc_lec .swiper-slide .badge_wrap .badge.type2{background: #fff;border: 1px solid #0082ff;color: #0082ff;}
+main .sc_lec .swiper-slide .info_wrap .lec_tit{font-size: 4vw;font-weight: 900;}
+main .sc_lec .swiper-slide .info_wrap .lec_desc{margin: 2vw 0 4vw;font-size: 3vw;max-height: 10vw;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;color: #334b62;}
+main .sc_lec .swiper-slide .info_wrap .prof_name{font-size: 6vw;font-weight: 900;}
+main .sc_lec .swiper-slide .img_wrap{margin-top: 3.6vw;}
+main .sc_lec .swiper-slide a img{width:100%;object-fit: cover;}
+
+/* 핫클립 */
+main .sc_mov{margin-top: 10vw;position: relative;}
+main .sc_mov .btn_youtube{width: 17%;display: block;position: absolute;top: 0;right: 5vw;}
+main .sc_mov .video_area .video_wrap{position:relative; background:#000000;border-radius: 2vw;overflow: hidden;}
+main .sc_mov .video_area .video_wrap>div{height:55vw;}
+main .sc_mov .video_area .video_wrap iframe{width: 100%;height: 100%;object-fit: cover;}
+main .sc_mov .video_area .video_wrap a::after{content: '';position: absolute;top: 0;left: 0;background: #00000047 url(../img/m_btn_play.png) no-repeat center 50%;width: 100%;height: 100%;}
+main .sc_mov .video_area .video_wrap a{display:block; width:100%; height:100%;}
+main .sc_mov .video_area .video_wrap img{width:100%;object-fit: cover;}
+main .sc_mov .video_area .video_desc{background: #f4f5f7;text-align: center;color: #666;font-size: 1rem;line-height: 1.3rem;padding: 3vw 10vw;border-radius: 1.5vw;margin: 3vw 0;}
+main .sc_mov .video_area .video_desc .desc{overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+main .sc_mov .video_list {margin-left: 5vw;;}
+main .sc_mov .video_list img{width: 100%;object-fit: cover;}
+main .sc_mov .video_list .swiper-slide{display: block;background: #000;margin-right: 3vw;border-radius: 2vw;overflow: hidden;width: 42%;display: block;height: 100%;}
+main .sc_mov .video_list .swiper-slide a::after{content: '';position: absolute;top: 0;left: 0;background: #00000055 url(../img/m_btn_play.png) no-repeat center 50%;width: 100%;height: 100%;background-size: 30%;}
+
+/* 공지사항 */
+main .sc_notice{position: relative;margin: 10vw 0 15vw;}
+main .sc_notice .sc_tit{padding-bottom: 2vw;}
+main .sc_notice .notice_item:first-child{border-top: 1px solid #bbbbbb;}
+main .sc_notice .notice_item{font-size: 1.3rem;color: #222;border-bottom: 1px solid #dddddd;line-height: 1.3rem;}
+main .sc_notice .notice_item a{display: block;width: 100%;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;padding: 3.5vw 0;font-size: 3.5vw;}
+main .sc_notice .btn_more::after{content: '\00d7';position: absolute;right: 5vw;top: 3%;color: #111;font-size: 10vw;transform: rotate(45deg);font-weight: lighter;}
+
+/* 고객센터 */
+main .cs_area{display: flex;padding: 8vw 5vw;background: #f5f5f5;justify-content: space-between;font-size: 3vw;font-size: 4vw;font-weight: bold;}
+main .cs_area .cs_info{display: flex;align-items: flex-end;flex-direction: column;justify-content: space-between;text-align: left;font-size: 3vw;font-weight: 500;width: 36%;align-items: flex-start;padding: 1vw 0;}
+main .cs_area .cs_info>div{display: flex;justify-content: space-between;width: 100%;}
+main .cs_area .cs_info .desc{color: #888;font-weight: 300;}
+main .cs_area .cs_info .time{font-weight: 300;}
+main .cs_area .cs_call .number{font-size: 9vw;font-weight: 800;color: #0082ff;font-family: 'Montserrat';margin-top: 2vw;display: inline-block;line-height: 8vw;}
+

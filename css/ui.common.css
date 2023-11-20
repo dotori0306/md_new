@@ -1,0 +1,654 @@
+/* 변리사 모바일 공통 스타일 */
+@charset "utf-8";
+
+/* RESET */
+* {-webkit-text-size-adjust:none;}
+html,body,button,dl,dt,dd,div,form,fieldset,legend,h1,h2,h3,h4,h5,h6,input,select,textarea,ul,ol,li,p,pre,table,td,th,caption,a,button,figure{margin:0;padding:0; line-height:120%; outline:none;}
+body{background-color:#fff;}
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+body{font-size:14px; color:#141414; font-family:'font_ns', sans-serif;}
+input{vertical-align:middle;  font-family:'font_ns', sans-serif; -webkit-appearance:none;-webkit-border-radius:0;}
+select{
+    font-family:font_ns, sans-serif;
+    -webkit-appearance:none; /* 화살표 없애기 for chrome*/
+    -moz-appearance:none;    /* 화살표 없애기 for firefox*/
+    appearance:none;         /* 화살표 없애기 공통*/
+}
+textarea{font-family:'font_ns', sans-serif;}
+ol,ul{list-style:none}
+a{text-decoration:none; color:#141414;}
+img{vertical-align:top; border:0}
+table{border-collapse:collapse;border-spacing:0; width:100%;}
+caption{visibility:hidden; font-size:0; line-height:0; opacity:0; height:0; overflow:hidden;}
+em{font-style:normal;}
+
+/* --- webfont --- */
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+@import url('https://webfontworld.github.io/Montserrat/Montserrat.css');
+@font-face {
+    font-family:font_ns;
+    font-style: normal;
+    font-weight:100;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
+}
+@font-face {
+    font-family:font_ns;
+    font-style: normal;
+    font-weight:normal;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
+@font-face {
+    font-family:font_ns;
+    font-style: normal;
+    font-weight:300;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+}
+@font-face {
+    font-family:font_ns;
+    font-style: normal;
+    font-weight:bold;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
+/**********************************************************************************************
+기본폰트 14px
+
+9px ---> 0.643em
+10px ---> 0.714em
+11px ---> 0.786em
+12px ---> 0.857em
+13px ---> 0.929em
+14px ---> 1.000em
+15px ---> 1.071em
+16px ---> 1.143em
+17px ---> 1.214em
+18px ---> 1.286em
+19px ---> 1.357em
+20px ---> 1.429em
+21px ---> 1.500em
+22px ---> 1.571em
+23px ---> 1.643em
+24px ---> 1.714em
+25px ---> 1.786em
+**********************************************************************************************/
+
+body.fixed{height:100%; min-height:100%; overflow:hidden !important; touch-action:none;}
+
+#wrap{min-width:320px;}
+.blind{position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); margin: -1px}
+main{background: #fff;font-family: 'pretendard';overflow: hidden;}
+section{font-family: 'pretendard';}
+section img{width: 100%;object-fit: cover;}
+section .inner{padding: 0 5vw;}
+
+/* header */
+header {width:100%;text-align:center;background:#fff; overflow:hidden;position: relative;}
+header .logo_area{padding: 4vw;display: flex;align-items: center;justify-content: space-between;}
+header .logo {width: 37vw;display: block;margin: 0 auto;}
+header .logo img{width: 100%;object-fit: cover;}
+header .btn_L {width: 9vw; height: 9vw; background:url(../img/m_btn_info.png) no-repeat center/cover;  background-size:65%;}
+header .btn_R {width: 9vw; height: 9vw; background:url(../img/m_btn_menu.png) no-repeat center center; background-size:65%;}
+/* header - nav */
+nav {-webkit-overflow-scrolling: touch;touch-action: pan-x;overflow: auto;-ms-overflow-style: none;background: #f2f2f2;}
+nav::-webkit-scrollbar {display: none;}
+nav a{display: block;font-family: 'pretendard';color: #999;}
+nav a.on{font-weight: bold;color: #111;}
+nav .nav_wrap{display: flex;padding: 4vw;justify-content: space-between;font-size: 3.5vw; width: 100%;}
+
+#sidemenu_wrapper{position:fixed; left:100%; top:0; bottom:0; width:100%; background:#fff; box-sizing:border-box; z-index:998; overflow:auto;}
+#sidemenu_wrapper .sidemenu_cont .swiper-container {overflow:visible; height:100%;}
+#sidemenu_wrapper .sidemenu_cont .swiper-slide {height:auto;}
+#sidemenu_wrapper .side_header{height:52px; background:#bd2626;}
+#sidemenu_wrapper .side_header{font-size:1.143em;}
+#sidemenu_wrapper .side_menu{border-bottom:1px solid #e0e0e0; padding:15px 0;}
+#sidemenu_wrapper .side_menu ul{text-align:center; font-size:0; padding:0 20px;}
+#sidemenu_wrapper .side_menu ul li{display:inline-block; font-size:14px; width:25%;}
+#sidemenu_wrapper .side_menu ul li i{position:relative; display:inline-block; width:38px; height:38px; background:#ebe6e4; border-radius:50%;}
+#sidemenu_wrapper .side_menu ul li i em{display:block; position:absolute; bottoM:0; right:-6px; padding:0 5px; min-width:16px; line-height:16px; font-size:0.714em; color:#fff; background:#c62828; border-radius:8px; box-sizing:border-box; letter-spacing:-0.05em;}
+
+#sidemenu_wrapper .side_menu ul li a{font-size:0.786em; font-weight:300;}
+#sidemenu_wrapper .side_menu ul li span{display:block; margin-top:5px;}
+#sidemenu_wrapper .side_menu ul li .icon01{background:#ebe6e4 url(//img.megalawyers.co.kr/mobile/common/icon_side_menu01.png) 50% 50% no-repeat; background-size:20px;}
+#sidemenu_wrapper .side_menu ul li .icon02{background:#ebe6e4 url(//img.megalawyers.co.kr/mobile/common/icon_side_menu02.png) 50% 50% no-repeat; background-size:20px;}
+#sidemenu_wrapper .side_menu ul li .icon03{background:#ebe6e4 url(//img.megalawyers.co.kr/mobile/common/icon_side_menu03.png) 50% 50% no-repeat; background-size:20px;}
+#sidemenu_wrapper .side_menu ul li .icon04{background:#ebe6e4 url(//img.megalawyers.co.kr/mobile/common/icon_side_menu04.png) 50% 50% no-repeat; background-size:20px;}
+#sidemenu_wrapper .info{position:relative; padding:12px 20px; border-bottom:1px solid #e0e0e0; overflow:hidden;}
+#sidemenu_wrapper .info p{line-height:20px; text-align:left; padding-right:120px;}
+#sidemenu_wrapper .info p span{font-weight:300;}
+#sidemenu_wrapper .info .btn_wrap{position:absolute; top:12px; right:20px;}
+#sidemenu_wrapper .info .btn_wrap .btn span{padding:0 6px;}
+#sidemenu_wrapper .side_footer{border-top:1px solid #1a1a1a; padding:20px 0;}
+#sidemenu_wrapper .side_footer > p{color:#999; font-size:0.786em;}
+#sidemenu_wrapper .side_footer ul{text-align:center; margin-top:10px;}
+#sidemenu_wrapper .side_footer ul li{display:inline-block;}
+#sidemenu_wrapper .side_footer ul li + li{margin-left:12px;}
+#sidemenu_wrapper .side_footer ul li a{display:block; height:26px;}
+#sidemenu_wrapper .side_footer ul li a img{height:26px;}
+
+#sidemenu_wrapper .btn_home {position:absolute; left:12px; top:6px; height:40px; width:40px; background:url(//img.megalawyers.co.kr/mobile/common/icon_home.png) 50% 50% no-repeat; background-size:20px 20px; text-indent: -9999px; font-size: 0;}
+#sidemenu_wrapper .btn_sidemenu_close {position:absolute; right:12px; top:6px; height:40px; width:40px; background:url(//img.megalawyers.co.kr/mobile/common/icon_sidemenu_close.png) 50% 50% no-repeat; background-size:20px 20px; text-indent: -9999px; font-size: 0;}
+
+footer{background:#edecec;text-align:left;font-family: 'pretendard';color: #333;}
+footer .footer_inner{padding: 7vw 7vw; text-align:left;font-family: 'pretendard';color: #333;font-size: .8rem; line-height:1.2rem; }
+footer .corp_area{display: flex;justify-content: space-between;width: 100%;height: 11vw;border-bottom: 1px solid #dddddd;}
+footer .corp_area .corp_list{width: calc((100% - 2px) /3);text-align: center;border-right: 1px solid #dddddd;}
+footer .corp_area .corp_list:last-child{border: 0;}
+footer .corp_area a{display: block;height: 100%;font-size: 3vw;font-weight: bold;color: #000;line-height: 11vw;}
+footer .info_area{color: #333;font-size: 2.5vw;}
+footer .info_area dt{line-height: 3.7vw;font-weight: 300;}
+footer .info_area dt.company{font-weight: 900;font-size: 3vw;margin-bottom: 2.2vw;}
+
+
+/*// 2022.01.18 수정 */
+@media (max-width:320px){
+    footer .footer_info dl:first-child{padding-left:5px;}
+    footer .footer_info dd{margin-left:4px; letter-spacing:-0.15em;}
+    footer .footer_cont ul{padding:0 10px;}
+}
+#wrap .btn_area{position: fixed; bottom:5%; right:5%;z-index: 1;}
+#wrap .btn_area a{display:block;}
+#wrap .btn_area a + a{margin-top:3vw;}
+#wrap .btn_area .btn_top img{width:12vw; height:12vw;}
+#wrap .btn_area .btn_kakao img{width:12vw; height:12vw;}
+
+h3.h_tit{color:#292929; font-size:1.071em; font-weight:300; margin-bottom:12px;}
+h3.h_tit em{color:#989898; font-size:0.667em; margin-left:5px;}
+p.info_txt{color:#989898; font-size:0.714em; margin-top:10px;}
+p.info_txt + .info_txt{margin-top:5px;}
+.txt_caution{position:relative; padding-left:16px; color:#989898; font-size:0.714em; margin-top:10px;}
+.txt_caution:before{position:absolute; content:''; width:11px; height:11px; left:0; top:1px; background:url(//img.megalawyers.co.kr/mobile/common/icon_caution.png) 0 0 no-repeat; background-size:100%;}
+
+.txt_list01 li{position:relative; line-height:140%; letter-spacing:-0.05em; font-size:0.786em; color:#989898; text-align:left; padding-left:8px;}
+.txt_list01 li:before {background-color:#989898; display:block; content:''; border-radius:50%; position:absolute; left:0; top:6px; height:2px; width:2px;}
+.txt_list01 li+ li{margin-top:3px;}
+
+.txt_list02 li{position:relative; line-height:140%; letter-spacing:-0.05em; font-size:0.786em; color:#999; text-align:left; padding-left:14px;}
+.txt_list02 li:before {color:#999; display:block; content:'※'; position:absolute; left:0; top:0;}
+.txt_list02 li+ li{margin-top:3px;}
+.txt_list02.markB li{color:#141414;}
+.txt_list02.markB li:before{color:#141414;}
+
+/* button */
+.btns_wrapper{text-align:center;}
+.btn{display:inline-block; border-width:1px; border-style:solid; text-align:center; box-sizing:border-box;}
+.btn span{display:inline-block; padding:0 10px; height:42px; line-height:42px; vertical-align:top; font-size:1.143em; text-align:center; letter-spacing:-0.05em}
+.btn.size0 span{height:18px; padding:0 6px; line-height:18px; font-size:0.714em;}
+.btn.size1 span{height:30px; line-height:30px; font-size:1em;}
+.btn.sizeL span{font-size:1.357em; height:52px; line-height:52px;}
+.btn.w100{width:100px;}
+.btn_wide .btn{display:block;}
+.btn_wide02{font-size:0;}
+.btn_wide02 .btn{display:block; margin:0 -20px; font-size:14px;}
+.btn_wide02.btn_fixed .btn{margin:0;}
+.btn_wide03{font-size:0;}
+.btn_wide03 .btn{display:inline-block; width:49%; font-size:14px;}
+.btn_wide03 .btn + .btn{margin-left:2%;}
+.btn.radius{border-radius:4px;}
+.btns_wrapper.btn_fixed{display:flex; position:fixed; left:0; right:0; bottom:0; z-index:98; overflow:hidden;}
+.btns_wrapper.btn_fixed .btn {display:block; width:100%; font-size:14px;}
+.btns_wrapper.col02 a{width:50%; display:inline-block; margin:0;}
+.btns_wrapper.col02 .btn{margin:0;}
+.btn_bottom{}
+
+
+.btns_wrapper .btn_more{display:inline-block; padding:10px 0; margin:10px 0; color:#999; font-size:0.929em;}
+.btns_wrapper .btn_all{display:inline-block; padding:10px 0; color:#999; font-size:0.929em;}
+.btns_wrapper .btn_all{padding-right:15px; background:url(//img.megalawyers.co.kr/mobile/sub/icon_btn_arr.png) right center no-repeat; background-size:10px 6px;}
+.btns_wrapper .btn_all.active{background:url(//img.megalawyers.co.kr/mobile/sub/icon_btn_arr02.png) right center no-repeat; background-size:10px 6px;}
+.toggle_cont{display:none;}
+
+.btn.btn_white{background-color:#fff; border-color:#dddddd; color:#bbbbbb}
+.btn.btn_gray{background-color:#898989; border-color:#898989; color:#fff}
+.btn.btn_gray02{background-color:#fff; border-color:#999999; color:#999999}
+.btn.btn_brown{background-color:#9e8078; border-color:#9e8078; color:#fff}
+.btn.btn_brown02{background-color:#fff; border-color:#9e8078; color:#9e8078}
+.btn.btn_black{background-color:#000; border-color:#000; color:#fff}
+.btn.btn_point{background-color:#c62828; border-color:#c62828; color:#fff}
+.btn.btn_point02{background-color:#fff; border-color:#c62828; color:#c62828}
+
+.btn_list_more{font-weight:300; font-size:18px; color:#999999; background-color:#e2e2e2; height:50px; line-height:50px; display:block; text-align:center; max-width:290px; margin:30px auto 0; border-radius:50px;}
+
+/* form :::text */
+::-ms-clear {
+    display: none;
+}
+/* form :::text */
+.form_content .form_text ~ .form_text{margin-top:-1px;}
+.form_text{z-index:1;position:relative; background-color:#fff; border:1px solid #e0e0e0; box-sizing:border-box;}
+.form_text input{border:0; padding-right:46px; box-sizing:border-box;  width:100%; height:42px; color:#141414; text-indent:15px; font-size:1em; letter-spacing:-0.05em; background-color:transparent;}
+.form_text input::placeholder{color:#cbcbcb;}
+.form_text.disabled{background:#f7f7f7;}
+.form_text.disabled input::placeholder{color:#989898;}
+/*.form_text input:disabled{background:#f7f7f7;}*/
+.form_text .btn{position:absolute; right:5px; top:5px;}
+.form_text label{position:absolute;font-size:1em;top:0;left:15px;height:42px; overflow:hidden; line-height:42px;color:#cbcbcb;letter-spacing:-1px;}
+.form_text p{font-size:10px; padding:0 15px 13px; color:#989898;}
+.form_text.error p{color:#ff3f3f !important;}
+.form_text.bg_gray{background:#f7f7f7;}
+.form_text .no_del input{padding-right:0;}
+.ess{color:#c62828; font-size:14px; display:inline-block; vertical-align:top; margin-left:2px; position:relative; top:0; width:7px; height:7px;}
+
+.form_text.form_btn .input{position:relative; box-sizing:border-box; width:65%; width : -webkit-calc(100% - 105px); /* for Chrome, Safari */ width : -moz-calc(100% - 105px); /* for Firefox */ width : calc(100% - 105px); /* for IE */}
+
+.form_text .btn_del.hidden{display:none;}
+.form_text .btn_del{position:absolute; right:15px; top:12px; width:16px; height:16px; text-indent:-9999px; background:url(//img.megalawyers.co.kr/mobile/common/icon_input_del.png) 0 0 no-repeat; background-size:100% 100%; z-index: 10; pointer-events: auto; cursor: pointer; }
+
+/* form :::select */
+.form_select{border:1px solid #e0e0e0; background-color:#fff; position:relative; display:inline-block; box-sizing:border-box;}
+.form_select:after{content:''; position:absolute; right:6px; top:18px; background:url(//img.megalawyers.co.kr/mobile/common/icon_select_arr.png) 0 0 no-repeat; width:12px; height:7px; background-size:100%}
+.form_select select{width:100%; border:0; height:42px; line-height:42px; color:#989898; font-size:1em; padding:0 25px 0 12px; background-color:transparent; letter-spacing:-0.05em; box-sizing:border-box;}
+.form_select select::-ms-expand { display:none;}
+.form_select select:focus{outline:none; color:#141414;}
+.form_select select:disabled{background:#f7f7f7;}
+.form_select.h30{}
+.form_select.h30 select{height:30px; line-height:30px;}
+.form_select.h30:after{ top:12px;}
+
+.form_select02{border:0; background-color:#fff; position:relative; display:inline-block; box-sizing:border-box;}
+.form_select02:after{content:''; position:absolute; right:0; top:7px; background:url(//img.megalawyers.co.kr/mobile/common/icon_select_arr02.png) 0 0 no-repeat; width:10px; height:6px; background-size:100%}
+.form_select02 select{width:100%; border:0; height:20px; line-height:20px; color:#141414; font-size:0.929em; padding:0 18px 0 0; background-color:transparent; letter-spacing:-0.05em; box-sizing:border-box;}
+.form_select02 select::-ms-expand { display:none;}
+
+/* form :::checkbox */
+.form_checkbox{ display:inline-block; cursor:pointer; /*overflow:hidden;*/ position:relative; vertical-align:top; min-height:16px; padding-left:16px; line-height:16px; letter-spacing:-0.05em;}
+.form_checkbox input[type="checkbox"]{height:0; opacity:0; width:0; position:absolute; left:-10px;}
+.form_checkbox .icon{position:absolute; overflow:hidden; left:0; top:0; width:16px; height:16px; background:url(//img.megalawyers.co.kr/mobile/common/icon_checkbox.png) 0 0 no-repeat; background-size:100%;}
+.form_checkbox input[type="checkbox"]:checked+.icon{background:url(//img.megalawyers.co.kr/mobile/common/icon_checkbox_on.png) 0 0 no-repeat; background-size:100%;}
+.form_checkbox input[type="checkbox"]:disabled+.icon{background:url(//img.megalawyers.co.kr/mobile/common/icon_checkbox_disabled.png) 0 0 no-repeat; background-size:100%;}
+.form_checkbox input[type="checkbox"]:checked ~ .txt{color:#141414;}
+.form_checkbox .txt{vertical-align:top; margin-left:6px; color:#999;}
+.form_checkbox .txt em{vertical-align:top;}
+.h_tit .form_checkbox .txt{color:#141414 !important;}
+
+/* form :::radio */
+.form_radio { display:inline-block; cursor:pointer; overflow:hidden; position:relative; vertical-align:middle; padding-left:18px; min-height:18px;}
+.form_radio + .form_radio { margin-left:5px;}
+.form_radio input[type="radio"] {height:0; opacity:0; width:0; position:absolute; left:-99px;}
+.form_radio .icon {position:absolute; overflow:hidden; left:0; top:0; width:18px; height:18px; background:url(//img.megalawyers.co.kr/mobile/common/icon_radio.png) 0 0 no-repeat; background-size:100%;}
+.form_radio input[type="radio"]:checked + .icon {background:url(//img.megalawyers.co.kr/mobile/common/icon_radio_on.png) 0 0 no-repeat; background-size:100%;}
+.form_radio input[type="radio"]:checked ~ .txt{color:#141414;}
+.form_radio input[type="radio"]:disabled + .icon {background:url(//img.megalawyers.co.kr/mobile/common/icon_radio_disabled.png) 0 0 no-repeat; background-size:100%;}
+.form_radio .txt { margin-left:6px; line-height:18px; color:#999;}
+
+.form_radio02_wrap{font-size:0;display:flex;display:-webkit-flex}
+.form_radio02{position:relative;flex-grow:1;text-align:center;width:50%;}
+.form_radio02 input{position:absolute;width:100%;height: auto;padding: 0;background: transparent;border: 0;-webkit-appearance: none;-moz-appearance: none;appearance: none;outline: 0}
+.form_radio02 input:before{content: '';box-sizing: border-box; border: 1px solid #e0e0e0;display:block;width:100%;border-radius:0;height:42px;}
+.form_radio02 input:checked + span{color:#9b7e76;}
+.form_radio02 input:checked:before {border:1px solid #9b7e76 !important; position:absolute; z-index:2;}
+.form_radio02 input + span{position:relative;z-index:2;display:inline-block;height:42px;line-height:42px;width:100%;font-size:14px; color:#989898}
+.form_radio02 input + .txt02{line-height:100%; height:42px; box-sizing:border-box; padding-top:7px;}
+.form_radio02 input + .txt02 em{font-size:0.643em;}
+.form_radio02 + .form_radio02{margin-left:-1px;}
+.form_radio02 + .form_radio02 input:before{border-left:0;}
+
+/* form :::search */
+.form_money{margin:10px 0 15px; position:relative; border:1px solid #e0e0e0; box-sizing:border-box; padding-right:94px;}
+.form_money .text{position:relative; padding-right:79px; background-color:#fff;}
+.form_money input{background-color:#fff; text-align:right; height:42px; border:0; width:100%;}
+.form_money input::placeholder{color:#bbbbbb; font-size:16px; line-height:1.46em;}
+.form_money .btn_use{display:block; text-align:center; width:78px; border-left:1px solid #e0e0e0; line-height:42px; position:absolute; right:0; top:0;}
+
+/* form :::file */
+.form_file{border:1px solid #999999; position:relative; border-radius:4px; width:100px; height:30px; display:inline-block; cursor:pointer;}
+.form_file:before{content:''; position:absolute; left:16px; top:6px; width:8px; height:17px; background:url(//img.megalawyers.co.kr/mobile/sub/icon_file.png) 0 0 no-repeat; background-size:100% 100%;}
+.form_file:after{content:'파일첨부'; position:absolute; left:33px; top:0; z-index:1; cursor:pointer; line-height:29px; color:#999999; font-size:14px; letter-spacing:-0.05em}
+.form_file input[type="file"]{position:absolute; right:0; top:0; height:30px; width:98px; text-indent:-9999px;  opacity:0; z-index:3; cursor:pointer;}
+
+/* form :::textarea */
+.form_textarea{background-color:#fff; width:100%; box-sizing:border-box; border:1px solid #e0e0e0; display:inline-block;}
+.form_textarea textarea{background-color:transparent; width:100%; border:0; color:#1a1a1a; padding:15px; box-sizing:border-box; letter-spacing:-0.05em;}
+.form_textarea textarea::placeholder{color:#cbcbcb;}
+
+.file-list{margin-top:0.7rem; display:none;}
+.file-list li{margin:0;margin-bottom:0.7rem !important;}
+.file-list li span{font-size:1.3rem;}
+.file-list li span a{word-break:break-word;display:inline}
+
+/* form :::switch */
+.form_switch {display:inline-block; cursor:pointer; position:relative; min-height:20px;}
+.form_switch input[type="checkbox"] {height:0; opacity:0; width:0; position:absolute; left:-10px;}
+.form_switch .icon {background-color:#e0e0e0; overflow:hidden; display:inline-block; border-radius:10px; vertical-align:middle; position:relative; top:0; height:20px; width:34px;}
+.form_switch .icon:before {background-color:#9b7e76; content:''; border-radius:10px; position:absolute; left:-100%;; top:0; height:100%; width:100%;}
+.form_switch .i_ctrl {background-color:#ffffff; display:block; border-radius:9px; box-sizing:border-box; position:absolute; left:1px; top:1px; transition-duration:0.3s; height:18px; width:18px;}
+.form_switch input[type="checkbox"]:checked ~ .icon:before {left:0;}
+.form_switch input[type="checkbox"]:checked ~ .i_ctrl {left:15px;}
+
+
+/* 약관동의 */
+.form_box {overflow:hidden; border:1px solid #e0e0e0;}
+.form_box ul li{position:relative; padding:12px 15px;}
+.form_box ul li + li{border-top:1px solid #e0e0e0;}
+
+.form_agree {overflow:hidden; border:1px solid #e0e0e0;}
+.form_agree ul li{position:relative; padding:13px 60px 13px 15px;}
+.form_agree ul li + li{border-top:1px solid #e0e0e0;}
+.form_agree ul li .view_pol {display:block; position:absolute; padding-right:8px; height:16px; line-height:16px; right:5px; top:12px; bottom:0; font-size:0.643em; font-weight:bold; background:url(//img.megalawyers.co.kr/mobile/common/icon_agree_arr.png) no-repeat right 50%; background-size:4px 7px;}
+
+
+/* form :::전화번호 */
+.num_wrap{font-size:0 !important;}
+.num_wrap .form_select{display:inline-block; width:30%; font-size:14px;}
+.num_wrap .form_select select{padding: 0 22px 0 10px;}
+.num_wrap .form_text{display:inline-block; width:31%; font-size:14px; vertical-align:top;}
+.num_wrap .form_text input{text-indent:0 !important; text-align:center;}
+.num_wrap .hypen{display:inline-block; font-size:14px; width:4%; text-align:center;}
+
+/* 박스 */
+.box_gray{background:#f7f7f7; padding:15px 10px;}
+.box_white{background:#fff; padding:10px 10px;}
+
+/* 아코디언 */
+.accordion_list {}
+.accordion_list > ul > li {border-bottom:1px solid #e0e0e0;}
+.accordion_list > ul > li > a { position:relative; display:block; padding:15px 25px 15px 22px; color:#999;}
+.accordion_list > ul > li > a:after{content:''; position:absolute; right:6px; bottom:19px; background:url(//img.megalawyers.co.kr/mobile/common/icon_select_arr.png) 0 0 no-repeat; width:12px; height:7px; background-size:100%}
+.accordion_list > ul > li > a em{position:absolute; left:0; width:20px; text-align:center;}
+.accordion_list > ul > li.active > a{color:#141414;}
+.accordion_list > ul > li.active > a:after{transform:rotate(180deg); -webkit-transform:rotate(180deg);-ms-transform: rotate(180deg);}
+.accordion_list > ul > li > a strong{font-weight:normal;}
+.accordion_list > ul > li .answer {display: none;}
+.accordion_list > ul > li .answer_cont { padding:15px; border-top:1px solid #e0e0e0;}
+.accordion_list > ul > li.active .answer {display:block;}
+
+/* popup */
+.popup-layer-box {display: none; position: absolute; top:0; right: 0; bottom: 0; left: 0; z-index:102;}
+.popup-layer-box.open {display:block; animation: opacity 0.3s ease-out forwards}
+.popup-layer-box::before {content: ''; display: block; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1000; background-color: rgba(0,0,0,0.3)}
+.popup-layer-box .popup-layer{position: fixed; left: 50%; top: 50%; width:90%; background: #fff; height: 80%; transform: translate(-50%,-50%); z-index: 1000;}
+
+.popup-layer .popup-inner{position:absolute; left:0; right:0; bottom:52px; top:36px; padding:20px; overflow-y:auto; box-sizing:border-box; max-height: calc(100% - 44px);}
+.popup-layer .popup-title{position:relative; font-size:1.071em; line-height:35px; padding:0 20px; border-bottom:1px solid #0c1528; }
+.popup-layer .popup-title span{font-weight:normal}
+.popup-layer .popup-title strong{font-weight:300}
+.popup-layer .popup-title .btn_close{position:absolute; right:20px; top:50%; margin-top:-8px; width:16px; height:16px; font-size:0; text-indent:-9999px; background:url(//img.megalawyers.co.kr/mobile/common/icon_popup_close.png) 0 0 no-repeat; background-size:100%;}
+.popup-layer .btn_close02{position:absolute; right:0; top:-20px; width:16px; height:16px; font-size:0; text-indent:-9999px; background:url(//img.megalawyers.co.kr/mobile/common/icon_popup_close02.png) 0 0 no-repeat; background-size:100%;}
+.popup-layer .popup-btn{margin-top:20px; position: absolute; left:0; right:0; bottom:0;}
+.popup-layer .popup-btn.type2{margin:0;}
+
+.popup-noraml .popup-layer{height:auto;}
+.popup-noraml .popup-inner{position:relative; top:0;}
+.popup-noraml .popup-inner .box_gray{padding:10px}
+
+.popup-full .popup-layer{width:100%; height:100%; top:0; left:0; right:0; bottom:0; transform:none;}
+.popup-full .popup-layer .popup-inner{bottom:54px;}
+
+#main_popup_new .popup-inner{padding:0 20px 10px; bottom:0;}
+#main_popup_new .popup-inner ul li p{margin-bottom:6px; font-size:0.714em; letter-spacing:-0.05em; font-weight:100;}
+#main_popup_new .popup-inner ul li p em{display:inline-block; margin-right:6px; font-weight:300; min-width:36px; line-height:16px; background:#ebe6e4; text-align:center;}
+#main_popup_new .popup-inner ul li a{display:block; font-size:0.929em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#main_popup_new .popup-inner ul li{border-bottom:1px solid #e0e0e0; padding:14px 0;}
+
+/* tab */
+.sub_tab{position:relative;}
+.sub_tab ul{padding:0 20px; border-bottom:1px solid #f7f7f7; font-size:0;}
+.sub_tab ul li{position:relative; display:inline-block; font-size:14px; letter-spacing:-0.04em;}
+.sub_tab ul li + li{margin-left:15px;}
+.sub_tab ul li a{display:inline-block; color:#b2b2b2; font-weight:300; font-size:1.143em; box-sizing:border-box; padding-bottom:10px;}
+.sub_tab ul li.active a{color:#99857a; font-weight:bold; border-bottom:2px solid #99857a;}
+.sub_tab p{padding:0 20px;}
+.sub_tab.type2 a{font-size:0.929em;}
+.sub_tab.type2 ul li + li{margin-left:10px;}
+
+@media (max-width:320px){
+    .sub_tab.type2 ul li + li{margin-left:5px;}
+    .sub_tab.type2 ul li a{font-size:0.857em;}
+}
+
+.sub_tab ul.col03{text-align:center;}
+.sub_tab ul.col03 li{width:33.33%;}
+.sub_tab ul.col03 li:last-child{width:33.34%;}
+.sub_tab ul.col03 li a{display:block;}
+.sub_tab ul.col03 li + li{margin-left:0;}
+
+.sub_tab ul.col04{text-align:center;}
+.sub_tab ul.col04 li{width:25% !important;}
+.sub_tab ul.col04 li a{display:block;}
+.sub_tab ul.col04 li + li{margin-left:0;}
+
+.sub_tab ul.col05{text-align:center;}
+.sub_tab ul.col05 li{width:20% !important;}
+.sub_tab ul.col05 li a{display:block;}
+.sub_tab ul.col05 li + li{margin-left:0;}
+
+.search_tab {margin-bottom:20px;}
+.search_tab ul{overflow:hidden}
+.search_tab ul li{float:left;}
+.search_tab ul li + li{margin-left:5px;}
+.search_tab ul li a{display:inline-block;padding:7px 0 8px 0; vertical-align:top; font-size:0.857em; color:#333;}
+.search_tab ul li a em{font-size:0.833em; margin-left:1px; line-height:100%; color:#4b6fbd; vertical-align:top;}
+.search_tab ul li.active a{color:#fff; padding:7px 7px 8px 8px; background:#000; border-radius:20px; font-weight:bold;}
+.search_tab ul li.active a em{color:#fff; font-weight:normal;}
+
+.tab_wrap{background:#f8f8f8; border-bottom:1px solid #1a1a1a;}
+.tab_wrap ul{overflow:hidden;}
+.tab_wrap ul li{position:relative; float:left; width:50%; text-align:center;}
+.tab_wrap ul li a{color:#b2b2b2; line-height:28px; font-size:0.857em;}
+.tab_wrap ul li.active a{color:#141414; font-weight:bold;}
+.tab_wrap ul li + li:before{position:absolute; content:''; width:1px; height:10px; left:0; top:50%; margin-top:-5px; background:#b3b3b3;}
+
+.tab_wrap_type2{overflow:hidden;position:relative;font-size:14px;color:#5E5E5E;border-right:1px solid #ebebeb;border-top:1px solid #ebebeb}
+.tab_wrap_type2.bt0{border-top:0}
+.tab_wrap_type2 li{float:left;width:33.3%;border-bottom:1px solid #ebebeb;}
+.tab_wrap_type2 li a{display:block;padding:13px 0;text-align:center;background:#f8f8f8;color:#b2b2b2;border-left:1px solid #ebebeb}
+.tab_wrap_type2 li.on a{position:relative;color:#9b7e76;background:#fff;font-weight:bold}
+
+.tab_wrap_type3{box-sizing:border-box;position:relative;border-top:1px solid #ebebeb;}
+.tab_wrap_type3 *{box-sizing:border-box;}
+.tab_wrap_type3 li{position:relative;float:left;width:25%;border-right:1px solid #ebebeb;border-bottom:1px solid #ebebeb;}
+.tab_wrap_type3 li a{display:table; width:100%;height:56px;text-align:center;color:#989898;}
+.tab_wrap_type3 li a span{display:table-cell; vertical-align:middle;}
+.tab_wrap_type3 li.on a{z-index:1;position:relative;color:#9b7e76;}
+.tab_wrap_type3 li.on a:before{content:'';position:absolute;top:-1px;right:-1px;left:-1px;bottom:-1px;border:1px solid #9b7e76;}
+.tab_wrap_type3 li.off a{z-index:0;position:relative;background:#f7f7f7;}
+.tab_wrap_type3 li.off a:before{content:'';position:absolute;top:-1px;right:-1px;left:-1px;bottom:-1px;border:1px solid #e0e0e0;}
+.tab_wrap_type3 li.row_first a:before{left:0;}
+.tab_wrap_type3:before{content:'';position:absolute;top:0;right:0;left:0;bottom:0;border:1px solid #ebebeb;border-top:0;}
+.tab_wrap_type3:after{display:block;content:'';clear:both;}
+
+/* table */
+.table_wrap table{border-top:1px solid #e0dbd9;}
+.table_wrap table th,
+.table_wrap table td{padding:8px 5px; text-align:center; letter-spacing:-0.5px; font-size:12px;}
+.table_wrap table thead th{font-weight:300; color:#99857a; background:#e0dbd9;  border-left:1px solid #fff;}
+.table_wrap table tbody th{background:#f8f8f8; border-bottom:1px solid #ebebeb; font-weight:normal;}
+.table_wrap table td{border-bottom:1px solid #ebebeb; border-left:1px solid #ebebeb;}
+.table_wrap table td.bd_l0{border-left:0;}
+.table_wrap table th.bt,
+.table_wrap table td.bt{border-top:1px solid #ebebeb !important;}
+.table_wrap table tbody tr:first-child td,
+.table_wrap table tbody tr:first-child th{border-top:0;}
+.table_wrap table thead th:first-child{border-left:0;}
+
+.table_wrap_type2 table{border-top:1px solid #e0e0e0;border-right:1px solid #e0e0e0;}
+.table_wrap_type2 th,
+.table_wrap_type2 td{text-align:center;padding:15px;border-bottom:1px solid #e0e0e0;border-left:1px solid #e0e0e0;}
+.table_wrap_type2 th{font-weight:300;background:#f7f7f7;color:#989898;}
+.table_wrap_type2 tbody th{text-align:left}
+
+/* board view */
+.board_view .board_tit{position:relative; letter-spacing:-0.02em; padding:0 20px 20px 20px; border-bottom:1px solid #e0e0e0;}
+.board_view .board_tit .tit{margin-bottom:15px; line-height:140%;}
+.board_view .board_view_area{position:relative; word-break:break-word; padding:20px 20px 30px 20px; line-height:140%; letter-spacing:-0.02em;}
+.board_view .board_view_area .file_list{margin-top:30px; padding-top:15px; border-top:1px solid #e0e0e0;}
+.board_view .board_view_area .file_list strong{position:relative; font-size:0.929em; padding-left:12px; float:left; color:#999999; font-weight:normal; background:url(//img.megalawyers.co.kr/mobile/sub/icon_file.png) 0 0 no-repeat; background-size:8px 16px;}
+.board_view .board_view_area .file_list ul{margin-left:70px;}
+.board_view .board_view_area .file_list li{word-break: break-word; font-size:0.929em;}
+.board_view .board_view_area .file_list li + li{margin-top:5px}
+.board_view .board_view_area img{max-width:100%; height:auto !important;}
+.board_view .board_view_area > *{ word-break: break-word;}
+
+/* qna list */
+.qna_list ul{border-top:1px solid #1a1a1a;}
+.qna_list ul li{position:relative; padding:14px 0 20px; border-bottom:1px solid #e0e0e0;}
+.qna_list ul li .status{float:left; display:table; text-align:center; width:44px; color:#999; font-size:0.857em; font-weight:normal; height:44px; border:1px solid #999999; border-radius: 50%; overflow: hidden;}
+.qna_list ul li .status span{display:table-cell; vertical-align: middle;}
+.qna_list ul li .status.type02{border:1px solid #1a1a1a; color:#1a1a1a;}
+.qna_list ul li .cont{margin-left:60px;}
+.qna_list ul li .tit{position:relative; height:40px; display:table; overflow:hidden; margin-top:3px;}
+.qna_list ul li .tit p{display:table-cell; letter-spacing:-0.05em; vertical-align:middle;}
+.qna_list ul li .tit a{line-height:20px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+.qna_list ul li .icon_box{position:absolute; top:0; right:0;}
+.qna_list ul li .icon_lock{display:inline-block; text-indent:-9999px; line-height:16px; width:12px; height:16px; background:url(//img.megalawyers.co.kr/mobile/sub/icon_lock.png) 0 0 no-repeat; background-size:100% 100%; vertical-align:top;}
+.qna_list ul li .icon_new{display:inline-block; letter-spacing:0; font-size:0.786em; line-height:16px; width:16px; height:16px; text-align:center; color:#fff; background:#4b6fbd; border-radius:50%; vertical-align:top;}
+
+/* qna write */
+.qna_write{padding:0 20px 94px; letter-spacing:-0.02em;}
+.qna_write .form_select,
+.qna_write .form_textarea,
+.qna_write .form_text{margin-top:8px;}
+.qna_write .file_wrap{position:relative; padding:23px 115px 0 0;}
+.qna_write .file_wrap .txt_list02 li{font-size:12px;}
+.qna_write .form_file{position:absolute; right:0; top:20px;}
+.qna_write .form_box .w90{display:inline-block; width:90px;}
+.qna_write .form_box .form_checkbox .txt{color:#141414;}
+
+.qna_write .file_list{margin-top:10px}
+.qna_write .file_list li + li{margin-top:4px;}
+.qna_write .file_list li a{vertical-align:top;}
+.qna_write .file_list li span{font-size:0.857em; color:#999; vertical-align:top; line-height:16px;}
+.qna_write .file_list li span a{word-break:break-word; color:#999; display:inline}
+.qna_write .file_list li .btn_cancel{display:inline-block; width:16px; height:16px; background:url(//img.megalawyers.co.kr/mobile/sub/icon_file_del.png) 0 0 no-repeat; background-size:100% 100%;}
+
+/* qna view */
+.qna_view{padding-bottom:0;}
+.qna_view .board_tit{position:relative; letter-spacing:-0.02em; padding:0 20px 24px 62px; border-bottom:1px solid #e0e0e0;}
+.qna_view .board_tit .tit{margin:5px 0 15px; line-height:140%;}
+.qna_view .board_tit > strong{position:absolute; left:20px; top:0; font-size:1.286em; text-align:center; width:30px; height:30px; line-height:26px; border: 1px solid #1a1a1a; border-radius: 50%; overflow: hidden;}
+.qna_view .board_view_area{position:relative; padding:20px 20px 30px 20px; line-height:140%; word-break:break-word; letter-spacing:-0.02em;}
+.qna_view .board_view_area img{max-width:100%;}
+
+.qna_view .board_answer{position:relative; padding:20px 0 40px; border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; background:#f8f8f8;}
+.qna_view .board_answer .board_answer_tit{padding:6px 20px 20px 62px;}
+.qna_view .board_answer .board_answer_tit strong{position:absolute; left:20px; top:20px; font-size:1.286em; background:#141414; color:#fff; text-align:center; width:30px; height:30px; line-height:28px; border: 1px solid #141414; border-radius: 50%; overflow: hidden;}
+.qna_view .board_answer .cont{border-top: 1px solid #e0e0e0; padding:20px 20px 0; letter-spacing:-0.02em; line-height:140%; word-break: break-word;}
+
+.qna_view .file_list{margin:30px 20px 0; padding:15px 0 30px; border-top:1px solid #e0e0e0;}
+.qna_view .file_list strong{position:relative; font-size:0.929em; padding-left:12px; float:left; color:#999999; font-weight:normal; background:url(//img.megalawyers.co.kr/mobile/sub/icon_file.png) 0 0 no-repeat; background-size:8px 16px;}
+.qna_view .file_list ul{margin-left:70px;}
+.qna_view .file_list li{word-break: break-word; font-size:0.929em;}
+.qna_view .file_list li + li{margin-top:5px}
+
+
+/*------------------------------------------------------------------------------
+| 글꼴
+|.............................................................................*/
+.relative { position:relative !important; }
+.block { display:block !important; }
+
+.ls3{letter-spacing:-0.03em;}
+.ls5{letter-spacing:-0.05em;}
+
+.lh_140{line-height:140%;}
+
+.bg_white { background:#fff !important;}
+.bg_gray { background:#f8f8f8;}
+.bg_gray02 { background:#f0f1f2;}
+
+.f10 { font-size:0.714em !important; }
+.f11 { font-size:0.786em !important; }
+.f12 { font-size:0.857em !important; }
+.f13 { font-size:0.929em !important; }
+.f14 { font-size:1.000em !important; }
+.f15 { font-size:1.071em !important; }
+.f16 { font-size:1.143em !important; }
+.f17 { font-size:1.214em !important; }
+.f18 { font-size:1.286em !important; }
+.f19 { font-size:1.357em !important; }
+.f20 { font-size:1.429em !important; }
+.f24 { font-size:1.714em !important; }
+
+.fleft  { float:left; }
+.fright { float:right; }
+.fclear { clear:both; }
+
+.tlight { font-weight:100 !important; }
+.tnormal { font-weight: normal !important; }
+.tmedium { font-weight:300 !important; }
+.tbold { font-weight:bold !important; }
+
+.tleft { text-align:left !important; }
+.tright { text-align:right !important; }
+.tcenter { text-align:center !important; }
+.tjustify { text-align:justify !important; }
+
+.w_100 { width:100%; }
+
+.bold { font-weight:bold; }
+.mark0 { color:#999999 !important; }
+.mark1 { color:#9b7e76 !important; }
+.mark2 { color:#c62828 !important; }
+.mark3 { color:#474747 !important; }
+.mark4 { color:#4b6fbd !important; }
+.mark5 { color:#f7f7f7 !important; }
+.mark9 { color:#000 !important; }
+.markW { color:#fff !important; }
+.markB { color:#141414 !important; }
+.markR { color:#ff3333 !important; }
+.markP { color:#0082ff !important; }
+.under { text-decoration:underline !important; }
+
+.inner10{padding-left:10px; padding-right:10px;}
+.inner20{padding-left:20px; padding-right:20px;}
+.mlr20{margin-right:-20px; margin-left:-20px;}
+
+.mt0 { margin-top:0 !important; }
+.mt5 { margin-top:5px !important; }
+.mt10 { margin-top:10px !important; }
+.mt15 { margin-top:15px !important; }
+.mt20 { margin-top:20px !important; }
+.mt25 { margin-top:25px !important; }
+.mt30 { margin-top:30px !important; }
+.mt35 { margin-top:35px !important; }
+.mt40 { margin-top:40px !important; }
+.mt50 { margin-top:50px !important; }
+.mt60 { margin-top:60px !important; }
+
+.ml5 { margin-left:5px !important; }
+.ml10 { margin-left:10px !important; }
+.ml20 { margin-left:20px !important; }
+
+.mr5 { margin-right:5px !important; }
+.mr10 { margin-right:10px !important; }
+.mr20 { margin-right:20px !important; }
+
+.mb0 { margin-bottom:0 !important; }
+.mb5 { margin-bottom:5px !important; }
+.mb10 { margin-bottom:10px !important; }
+.mb15 { margin-bottom:15px !important; }
+.mb20 { margin-bottom:20px !important; }
+.mb30 { margin-bottom:30px !important; }
+
+.pd10{padding:10px;}
+.pd15{padding:15px;}
+.pd20{padding:20px;}
+.pt0 { padding-top:0 !important; }
+.pb10 { padding-bottom:10px !important; }
+.pb20 { padding-bottom:20px !important; }
+.pb30 { padding-bottom:30px !important; }
+.pb40 { padding-bottom:40px !important; }
+
+.img_100 img{width:100%;}
+
+/* ico */
+.icon_tel{display:inline-block; text-indent:-9999px; width:15px; height:15px; background:url(//img.megalawyers.co.kr/mobile/sub/icon_tel.png) 0 0 no-repeat; background-size:100% 100%; vertical-align:top;}
+.icon_new{display:inline-block; line-height:16px; letter-spacing:0; font-size:10px; width:16px; height:16px; text-align:center; color:#fff; background:#4b6fbd; border-radius:50%; vertical-align:top;}
+.icon_file{display:inline-block; text-indent:-9999px; width:8px; height:16px; background:url(//img.megalawyers.co.kr/mobile/sub/icon_file.png) 0 0 no-repeat; background-size:100% 100%; vertical-align:top;}
+.icon_lock{display:inline-block; text-indent:-9999px; line-height:16px; width:12px; height:16px; background:url(//img.megalawyers.co.kr/mobile/sub/icon_lock.png) 0 0 no-repeat; background-size:100% 100%; vertical-align:top;}
+
+.icon_box .icon_status{display:inline-block; font-size:10px; padding:0 8px; line-height:16px; text-align:center; color:#fff; background:#aa9588; border-radius:16px; vertical-align:top;}
+.icon_box .icon_status.type02{background:#bebebe;}
+.icon_box .icon_status.type03{background:#f09590;}
+.icon_box .icon_status.type04{background:#69aff0;}
+.icon_box .icon_status.type05{background:#c62828;}
+
+.icon_pd{display:inline-block; letter-spacing:0; margin-top:1px; margin-left:5px; line-height:100%; vertical-align:top; padding:1px 2px; color:#99857a; font-size:11px; border:1px solid #99857a;}
+.icon_pd.c_blue{color:#4b6fbd; border:1px solid #4b6fbd;}
+.icon_pd.no_line{border:0; margin-top:2px;}
